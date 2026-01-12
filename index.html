@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awesome Accounting Services</title>
+  <meta name="description" content="Awesome Accounting Services provides accounting services, BIR compliance, bookkeeping, and financial reporting in General Mariano Alvarez, Calabarzon, Philippines." />
+  <meta name="keywords" content="Accounting Services Calabarzon, Accounting Services General Mariano Alvarez, Bookkeeping Philippines, BIR Compliance, SSS HDMF PHIC Compliance, Accounting Firm Calabarzon" />
+  <link rel="icon" href="/header-logo.svg"/>
+  <style>
+    :root { --primary:#3f3f3f; --secondary:#f4f4f4; --accent:#f6c15c; --text:#1f2933; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}
+    header{text-align:center;padding:30px 20px}
+    nav{border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff}
+    nav ul{display:flex;justify-content:center;gap:25px;list-style:none;padding:12px}
+    nav a{text-decoration:none;font-weight:bold;color:#333}
+    section{padding:70px 20px;max-width:1100px;margin:auto}
+    h2{text-align:center;margin-bottom:40px}
+    .services,.contact{background:var(--secondary)}
+    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+    .service-card{background:#fff;padding:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+    footer{background:#2f2f2f;color:#fff;text-align:center;padding:20px}
+    .hidden{display:none}
+    .form-input{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ddd;border-radius:6px}
+    .btn{background:var(--accent);border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer}
+    .message{max-width:500px;margin:20px auto;text-align:center}
+    /* header full-bleed image */
+    .site-header{position:relative;height:clamp(220px,36vh,420px);overflow:hidden;border-bottom-left-radius:8px;border-bottom-right-radius:8px}
+    .header-img{width:100%;height:160%;object-fit:contain;object-position:center center;display:block}
+    .header-caption{max-width:1100px;margin:-6px auto 24px auto;text-align:center;color:var(--text);font-size:clamp(0.95rem,1.6vw,1.1rem);padding:12px} 
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <img src="/header.jpg" alt="Awesome Accounting Services" class="header-img" onerror="this.onerror=null;this.src='public/header.jpg';" />
+</header>
+<p class="header-caption">Professional accounting, compliance, and financial services in General Mariano Alvarez, Calabarzon.</p>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p style="text-align:center">We provide reliable accounting and compliance services aligned with Philippine regulations.</p>
+</section>
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <div class="service-grid">
+    <div class="service-card">Accounting Services</div>
+    <div class="service-card">General Accounting</div>
+    <div class="service-card">SSS / HDMF / PHIC Compliance</div>
+    <div class="service-card">BIR Filing & Compliance</div>
+    <div class="service-card">Preparation of Financial Statements</div>
+    <div class="service-card">Compliance Audit</div>
+    <div class="service-card">Transfer of Real Properties</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:aweclient@gmail.com">aweclient@gmail.com</a></p>
+  <p>Phone: +63 917 503 7023 | 0906 836 0010</p>
+  <p>Location: General Mariano Alvarez, Calabarzon, Philippines</p>
+
+  <div id="response" class="message hidden" role="status" aria-live="polite"></div>
+
+  <form id="contactForm" style="max-width:500px;margin:20px auto">
+    <input id="name" name="name" placeholder="Name" required class="form-input" />
+    <input id="email" name="email" type="email" placeholder="Email" required class="form-input" />
+    <textarea id="message" name="message" placeholder="Message" required class="form-input" rows="6"></textarea>
+    <button id="submitBtn" type="submit" class="btn">Send</button>
+  </form>
+
+    <iframe src="https://www.google.com/maps?q=B-2%20L-10%2C%20Brgy.%20Congressional%20Rd%2C%20Poblacion%20IV%2C%20General%20Mariano%20Alvarez%2C%204117%20Cavite%2C%20Philippines&output=embed" width="100%" height="300" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<div style="position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px">
+  <a href="https://wa.me/639175037023" target="_blank" style="background:#25D366;color:#fff;padding:12px;border-radius:30px;text-decoration:none">WhatsApp</a>
+  <a href="https://m.me/100067488122500" target="_blank" style="background:#1877F2;color:#fff;padding:12px;border-radius:30px;text-decoration:none">Messenger</a>
+</div>
+
+<footer>
+  <p>© 2022 Awesome Accounting Services</p>
+</footer>
+
+<script>
+  // Client-side form submission to /api/contact
+  const form = document.getElementById('contactForm');
+  const responseEl = document.getElementById('response');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    responseEl.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const payload = {
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      message: document.getElementById('message').value.trim(),
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        responseEl.textContent = data.message || 'Thank you — your message was sent.';
+        responseEl.style.color = 'green';
+        form.reset();
+      } else {
+        responseEl.textContent = data.error || 'Something went wrong. Please try again later.';
+        responseEl.style.color = 'red';
+      }
+    } catch (err) {
+      responseEl.textContent = 'Network error — please try again later.';
+      responseEl.style.color = 'red';
+    } finally {
+      responseEl.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    }
+  });
+</script>
+
+</body>
+</html>
