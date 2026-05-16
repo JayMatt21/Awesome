@@ -3,138 +3,1085 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Awesome Accounting Services</title>
-  <meta name="description" content="Awesome Accounting Services provides accounting services, BIR compliance, bookkeeping, and financial reporting in General Mariano Alvarez, Calabarzon, Philippines." />
-  <meta name="keywords" content="Accounting Services Calabarzon, Accounting Services General Mariano Alvarez, Bookkeeping Philippines, BIR Compliance, SSS HDMF PHIC Compliance, Accounting Firm Calabarzon" />
-  <link rel="icon" href="/header-logo.svg"/>
+  <title>Awesome Accounting Services | Company Profile</title>
+  <meta
+    name="description"
+    content="Awesome Accounting Services provides accounting, tax compliance, bookkeeping, payroll support, and financial reporting for businesses in General Mariano Alvarez, Cavite and nearby areas."
+  />
+  <meta
+    name="keywords"
+    content="Accounting Services Cavite, Bookkeeping Philippines, BIR Compliance, SSS HDMF PHIC Compliance, Financial Statements, Company Profile"
+  />
+  <link rel="icon" href="/header-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    :root { --primary:#3f3f3f; --secondary:#f4f4f4; --accent:#f6c15c; --text:#1f2933; }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}
-    header{text-align:center;padding:30px 20px}
-    nav{border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff}
-    nav ul{display:flex;justify-content:center;gap:25px;list-style:none;padding:12px}
-    nav a{text-decoration:none;font-weight:bold;color:#333}
-    section{padding:70px 20px;max-width:1100px;margin:auto}
-    h2{text-align:center;margin-bottom:40px}
-    .services,.contact{background:var(--secondary)}
-    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-    .service-card{background:#fff;padding:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-    footer{background:#2f2f2f;color:#fff;text-align:center;padding:20px}
-    .hidden{display:none}
-    .form-input{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ddd;border-radius:6px}
-    .btn{background:var(--accent);border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer}
-    .message{max-width:500px;margin:20px auto;text-align:center}
-    /* header full-bleed image */
-    .site-header{position:relative;height:clamp(220px,36vh,420px);overflow:hidden;border-bottom-left-radius:8px;border-bottom-right-radius:8px}
-    .header-img{width:100%;height:160%;object-fit:contain;object-position:center center;display:block}
-    .header-caption{max-width:1100px;margin:-6px auto 24px auto;text-align:center;color:var(--text);font-size:clamp(0.95rem,1.6vw,1.1rem);padding:12px} 
+    :root {
+      --bg: #f6f1e8;
+      --surface: #fffdf8;
+      --surface-strong: #ffffff;
+      --ink: #1f2a37;
+      --muted: #5e6775;
+      --line: rgba(31, 42, 55, 0.1);
+      --brand: #a67c36;
+      --brand-deep: #6f5320;
+      --accent: #12343b;
+      --accent-soft: #dce9e7;
+      --shadow: 0 18px 50px rgba(27, 38, 49, 0.08);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(166, 124, 54, 0.14), transparent 28%),
+        linear-gradient(180deg, #f8f2e8 0%, #f7f4ef 32%, #fcfbf9 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    section {
+      padding: 92px 20px;
+    }
+
+    .container {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(18, 52, 59, 0.16);
+      color: #f7eee0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--brand-deep);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+    }
+
+    h1,
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      max-width: 11ch;
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(18px);
+      background: rgba(250, 248, 244, 0.88);
+      border-bottom: 1px solid rgba(31, 42, 55, 0.08);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(18, 52, 59, 0.16);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #374151;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--brand-deep);
+    }
+
+    .hero {
+      position: relative;
+      padding: 40px 20px 84px;
+    }
+
+    .hero-shell {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 28px;
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(10, 31, 36, 0.88), rgba(18, 52, 59, 0.76)),
+        url("/header.jpg") center/cover no-repeat;
+      box-shadow: 0 24px 70px rgba(18, 52, 59, 0.2);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(246, 193, 92, 0.25), transparent 24%),
+        linear-gradient(90deg, rgba(8, 20, 24, 0.76) 8%, rgba(8, 20, 24, 0.38) 58%, rgba(8, 20, 24, 0.28) 100%);
+      z-index: -1;
+    }
+
+    .hero-grid {
+      min-height: 76vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      align-items: end;
+      gap: 30px;
+    }
+
+    .hero-copy {
+      padding: 28px;
+      color: #ffffff;
+      animation: rise 0.8s ease both;
+    }
+
+    .hero-copy p {
+      color: rgba(255, 248, 239, 0.88);
+      max-width: 620px;
+      margin: 20px 0 28px;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #e8c57d, #c89947);
+      color: #1d222b;
+      box-shadow: 0 14px 30px rgba(200, 153, 71, 0.28);
+    }
+
+    .btn-secondary {
+      color: #fffaf2;
+      border: 1px solid rgba(255, 249, 240, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn:hover,
+    .btn-secondary:hover,
+    .btn:focus-visible,
+    .btn-secondary:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
+    }
+
+    .stat-card {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f8e8c3;
+    }
+
+    .stat-card span {
+      font-size: 0.92rem;
+      color: rgba(255, 249, 240, 0.86);
+    }
+
+    .hero-panel {
+      align-self: center;
+      padding: 26px;
+      border-radius: 30px;
+      background: rgba(255, 252, 246, 0.9);
+      box-shadow: var(--shadow);
+      animation: rise 1s ease 0.1s both;
+    }
+
+    .hero-panel h3 {
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .hero-panel ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-panel li {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .hero-panel li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .hero-panel strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .mini-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .intro-grid,
+    .process-grid,
+    .contact-grid {
+      display: grid;
+      gap: 26px;
+    }
+
+    .intro-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      align-items: start;
+    }
+
+    .story-card,
+    .profile-card,
+    .service-card,
+    .industry-card,
+    .process-step,
+    .contact-panel,
+    .map-card {
+      background: var(--surface-strong);
+      border: 1px solid rgba(31, 42, 55, 0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .story-card,
+    .profile-card,
+    .contact-panel,
+    .map-card {
+      padding: 32px;
+    }
+
+    .lead {
+      font-size: 1.12rem;
+      color: #334155;
+      max-width: 62ch;
+    }
+
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .key-points div {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: #fbf7ef;
+      border: 1px solid rgba(166, 124, 54, 0.12);
+    }
+
+    .key-points strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--brand-deep);
+    }
+
+    .profile-card {
+      background:
+        linear-gradient(180deg, rgba(18, 52, 59, 0.04), rgba(18, 52, 59, 0)),
+        var(--surface-strong);
+    }
+
+    .profile-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .profile-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+
+    .services-wrap {
+      background: linear-gradient(180deg, rgba(18, 52, 59, 0.03), rgba(18, 52, 59, 0));
+    }
+
+    .services-grid,
+    .industries-grid,
+    .process-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .industry-card,
+    .process-step {
+      padding: 28px;
+    }
+
+    .service-card p,
+    .industry-card p,
+    .process-step p {
+      font-size: 0.98rem;
+    }
+
+    .service-tag,
+    .step-no {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      background: #f5ecda;
+      color: var(--brand-deep);
+      font-weight: 800;
+    }
+
+    .industry-card {
+      background:
+        linear-gradient(180deg, rgba(166, 124, 54, 0.06), rgba(166, 124, 54, 0)),
+        #fffefb;
+    }
+
+    .process-wrap {
+      background: #f8faf9;
+    }
+
+    .process-step {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-step::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(18, 52, 59, 0.05);
+    }
+
+    .cta-band {
+      padding: 32px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, #12343b, #1d545e),
+        #12343b;
+      color: #fff;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 18px 45px rgba(18, 52, 59, 0.18);
+    }
+
+    .cta-band p {
+      color: rgba(247, 242, 233, 0.82);
+      max-width: 60ch;
+    }
+
+    .contact-grid {
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      align-items: start;
+    }
+
+    .contact-details {
+      list-style: none;
+      display: grid;
+      gap: 18px;
+      margin: 26px 0;
+    }
+
+    .contact-details strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .response {
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f8faf9;
+      border: 1px solid var(--line);
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(31, 42, 55, 0.14);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(166, 124, 54, 0.7);
+      box-shadow: 0 0 0 4px rgba(166, 124, 54, 0.12);
+    }
+
+    .field textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    .floating-links {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 25;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .floating-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 132px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 14px 28px rgba(31, 42, 55, 0.15);
+    }
+
+    .floating-links a:first-child {
+      background: #25d366;
+    }
+
+    .floating-links a:last-child {
+      background: #1877f2;
+    }
+
+    footer {
+      padding: 28px 20px 34px;
+      border-top: 1px solid rgba(31, 42, 55, 0.08);
+      background: rgba(255, 255, 255, 0.66);
+    }
+
+    .footer-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .intro-grid,
+      .contact-grid,
+      .services-grid,
+      .industries-grid,
+      .process-grid,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      .hero-panel {
+        max-width: 620px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      section {
+        padding: 72px 18px;
+      }
+
+      .nav-inner {
+        width: min(var(--max), calc(100% - 24px));
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 16px;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 22px 14px 68px;
+      }
+
+      .hero-shell {
+        padding: 18px;
+        border-radius: 28px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .story-card,
+      .profile-card,
+      .contact-panel,
+      .map-card {
+        padding: 24px;
+      }
+
+      .hero-stats,
+      .key-points,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-links {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .floating-links a {
+        min-width: 112px;
+      }
+    }
   </style>
 </head>
 <body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Awesome Accounting Services home">
+        <img src="/logo-awe.jpg" alt="Awesome Accounting Services logo" onerror="this.onerror=null;this.src='public/logo-awe.jpg';" />
+        <div class="brand-copy">
+          <strong>Awesome Accounting Services</strong>
+          <span>Accounting, compliance, and financial support</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">Profile</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<header class="site-header">
-  <img src="/header.jpg" alt="Awesome Accounting Services" class="header-img" onerror="this.onerror=null;this.src='public/header.jpg';" />
-</header>
-<p class="header-caption">Professional accounting, compliance, and financial services in General Mariano Alvarez, Calabarzon.</p>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Company Profile</span>
+            <h1>Accounting clarity for growing businesses.</h1>
+            <p>
+              Awesome Accounting Services helps business owners stay compliant, organized, and financially informed through dependable accounting, tax, and reporting support tailored to Philippine business requirements.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Request a Consultation</a>
+              <a class="btn-secondary" href="#services">Explore Services</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <strong>End-to-End</strong>
+                <span>Accounting, compliance, and reporting support in one partner.</span>
+              </div>
+              <div class="stat-card">
+                <strong>Client-Focused</strong>
+                <span>Built for owners who need responsive and practical guidance.</span>
+              </div>
+              <div class="stat-card">
+                <strong>Regulation-Aligned</strong>
+                <span>Structured around Philippine statutory and filing requirements.</span>
+              </div>
+            </div>
+          </div>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+          <aside class="hero-panel">
+            <h3>What clients can expect</h3>
+            <ul>
+              <li>
+                <strong>Reliable compliance support</strong>
+                From BIR requirements to mandatory government contributions, we help keep obligations on schedule.
+              </li>
+              <li>
+                <strong>Clear financial documentation</strong>
+                Organized records and reporting that support management, audit readiness, and decision-making.
+              </li>
+              <li>
+                <strong>Hands-on coordination</strong>
+                A practical working relationship for business owners who want fewer administrative bottlenecks.
+              </li>
+            </ul>
+            <div class="mini-card">Serving businesses in General Mariano Alvarez, Cavite and nearby areas.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p style="text-align:center">We provide reliable accounting and compliance services aligned with Philippine regulations.</p>
-</section>
+    <section id="about">
+      <div class="container intro-grid">
+        <article class="story-card">
+          <span class="section-label">Company Overview</span>
+          <h2>A dependable financial operations partner.</h2>
+          <p class="lead">
+            We position Awesome Accounting Services as a professional support partner for companies that want discipline in their books, consistency in compliance, and confidence in the numbers they use to run the business.
+          </p>
+          <div class="key-points">
+            <div>
+              <strong>Mission</strong>
+              Deliver accurate, timely, and practical accounting services that help clients operate responsibly and grow with confidence.
+            </div>
+            <div>
+              <strong>Approach</strong>
+              Combine technical compliance work with a service style that is responsive, discreet, and easy for clients to work with.
+            </div>
+            <div>
+              <strong>Value</strong>
+              Reduce administrative pressure so owners and managers can focus more on operations and business development.
+            </div>
+            <div>
+              <strong>Presentation-Ready</strong>
+              Structured to function as a company profile page you can confidently show to prospective clients.
+            </div>
+          </div>
+        </article>
 
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">Accounting Services</div>
-    <div class="service-card">General Accounting</div>
-    <div class="service-card">SSS / HDMF / PHIC Compliance</div>
-    <div class="service-card">BIR Filing & Compliance</div>
-    <div class="service-card">Preparation of Financial Statements</div>
-    <div class="service-card">Compliance Audit</div>
-    <div class="service-card">Transfer of Real Properties</div>
+        <aside class="profile-card">
+          <span class="section-label">Why Clients Choose Us</span>
+          <ul class="profile-list">
+            <li>Single-point support for accounting, statutory compliance, and reporting coordination.</li>
+            <li>Practical assistance for routine business requirements, not just one-time transactions.</li>
+            <li>Professional communication suitable for client presentations and credibility-building.</li>
+            <li>Service delivery designed to support both established firms and growing small-to-medium enterprises.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="services-wrap">
+      <div class="container">
+        <span class="section-label">Core Services</span>
+        <h2>Structured support across the financial workflow.</h2>
+        <p class="lead">
+          Our service mix is designed to help companies maintain clean books, meet regulatory responsibilities, and present financial information with clarity and professionalism.
+        </p>
+        <div class="services-grid" style="margin-top:32px">
+          <article class="service-card">
+            <div class="service-tag">01</div>
+            <h3>Accounting and Bookkeeping</h3>
+            <p>Maintain organized day-to-day records, ledgers, reconciliations, and accounting support that strengthen financial visibility.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-tag">02</div>
+            <h3>BIR Filing and Compliance</h3>
+            <p>Assist with tax compliance processes, required filings, and documentation aligned with business obligations.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-tag">03</div>
+            <h3>SSS, HDMF, and PHIC Support</h3>
+            <p>Provide compliance coordination for government-mandated employer and employee contribution requirements.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-tag">04</div>
+            <h3>Financial Statements</h3>
+            <p>Prepare clear financial reports and supporting schedules that help management and stakeholders understand business performance.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-tag">05</div>
+            <h3>Compliance Audit Assistance</h3>
+            <p>Support documentation readiness, internal review preparation, and compliance-related record organization.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-tag">06</div>
+            <h3>Property Transfer Documentation</h3>
+            <p>Assist in document coordination and administrative processes connected with transfer of real properties.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="container">
+        <span class="section-label">Client Fit</span>
+        <h2>Well-suited for practical, growth-oriented organizations.</h2>
+        <div class="industries-grid" style="margin-top:30px">
+          <article class="industry-card">
+            <h3>Small and Medium Enterprises</h3>
+            <p>For owners who need structure in their records, regular compliance support, and dependable admin coordination.</p>
+          </article>
+          <article class="industry-card">
+            <h3>Professional Service Firms</h3>
+            <p>For organizations that value polished documentation, financial order, and reliable back-office support.</p>
+          </article>
+          <article class="industry-card">
+            <h3>Property and Asset Transactions</h3>
+            <p>For clients requiring document-focused support related to transfer and compliance processes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process-wrap">
+      <div class="container">
+        <span class="section-label">How We Work</span>
+        <h2>A professional engagement flow that builds trust.</h2>
+        <div class="process-grid" style="margin-top:30px">
+          <article class="process-step">
+            <div class="step-no">1</div>
+            <h3>Initial Discovery</h3>
+            <p>We discuss your current setup, reporting needs, compliance exposure, and priorities so we can understand the engagement clearly.</p>
+          </article>
+          <article class="process-step">
+            <div class="step-no">2</div>
+            <h3>Service Alignment</h3>
+            <p>We identify the right mix of bookkeeping, compliance, reporting, and documentation support based on your business needs.</p>
+          </article>
+          <article class="process-step">
+            <div class="step-no">3</div>
+            <h3>Ongoing Coordination</h3>
+            <p>We maintain a responsive working relationship to keep submissions, records, and required financial outputs moving on time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h3 style="font-size:2rem;margin-bottom:10px;font-family:'Cormorant Garamond',serif;">Present a stronger image to your own clients and stakeholders.</h3>
+            <p>
+              This company profile layout is designed to communicate trust, order, and professionalism from the first impression.
+            </p>
+          </div>
+          <a class="btn" href="#contact">Start a Conversation</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <article class="contact-panel">
+          <span class="section-label">Contact</span>
+          <h2>Let’s discuss your accounting and compliance needs.</h2>
+          <p class="lead">
+            Reach out for inquiries, consultations, or service discussions. We’ll help you identify the right support setup for your business.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <strong>Email</strong>
+              <a href="mailto:aweclient@gmail.com">aweclient@gmail.com</a>
+            </li>
+            <li>
+              <strong>Phone</strong>
+              <a href="tel:+639175037023">+63 917 503 7023</a> | <a href="tel:+639068360010">0906 836 0010</a>
+            </li>
+            <li>
+              <strong>Location</strong>
+              General Mariano Alvarez, Calabarzon, Philippines
+            </li>
+          </ul>
+
+          <div id="response" class="response hidden" role="status" aria-live="polite"></div>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your business and the support you need." required></textarea>
+            </div>
+            <button id="submitBtn" type="submit" class="btn">Send Inquiry</button>
+          </form>
+        </article>
+
+        <aside class="map-card">
+          <iframe
+            src="https://www.google.com/maps?q=B-2%20L-10%2C%20Brgy.%20Congressional%20Rd%2C%20Poblacion%20IV%2C%20General%20Mariano%20Alvarez%2C%204117%20Cavite%2C%20Philippines&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Awesome Accounting Services location map"
+          ></iframe>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-links">
+    <a href="https://wa.me/639175037023" target="_blank" rel="noreferrer">WhatsApp</a>
+    <a href="https://m.me/100067488122500" target="_blank" rel="noreferrer">Messenger</a>
   </div>
-</section>
 
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:aweclient@gmail.com">aweclient@gmail.com</a></p>
-  <p>Phone: +63 917 503 7023 | 0906 836 0010</p>
-  <p>Location: General Mariano Alvarez, Calabarzon, Philippines</p>
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2022 Awesome Accounting Services</span>
+      <span>Professional accounting, compliance, and financial support in Cavite.</span>
+    </div>
+  </footer>
 
-  <div id="response" class="message hidden" role="status" aria-live="polite"></div>
+  <script>
+    const form = document.getElementById("contactForm");
+    const responseEl = document.getElementById("response");
+    const submitBtn = document.getElementById("submitBtn");
 
-  <form id="contactForm" style="max-width:500px;margin:20px auto">
-    <input id="name" name="name" placeholder="Name" required class="form-input" />
-    <input id="email" name="email" type="email" placeholder="Email" required class="form-input" />
-    <textarea id="message" name="message" placeholder="Message" required class="form-input" rows="6"></textarea>
-    <button id="submitBtn" type="submit" class="btn">Send</button>
-  </form>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      responseEl.classList.add("hidden");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
 
-    <iframe src="https://www.google.com/maps?q=B-2%20L-10%2C%20Brgy.%20Congressional%20Rd%2C%20Poblacion%20IV%2C%20General%20Mariano%20Alvarez%2C%204117%20Cavite%2C%20Philippines&output=embed" width="100%" height="300" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
+      const payload = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        message: document.getElementById("message").value.trim(),
+      };
 
-<div style="position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px">
-  <a href="https://wa.me/639175037023" target="_blank" style="background:#25D366;color:#fff;padding:12px;border-radius:30px;text-decoration:none">WhatsApp</a>
-  <a href="https://m.me/100067488122500" target="_blank" style="background:#1877F2;color:#fff;padding:12px;border-radius:30px;text-decoration:none">Messenger</a>
-</div>
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
 
-<footer>
-  <p>© 2022 Awesome Accounting Services</p>
-</footer>
+        const data = await res.json();
+        responseEl.classList.remove("hidden");
 
-<script>
-  // Client-side form submission to /api/contact
-  const form = document.getElementById('contactForm');
-  const responseEl = document.getElementById('response');
-  const submitBtn = document.getElementById('submitBtn');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    responseEl.classList.add('hidden');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    const payload = {
-      name: document.getElementById('name').value.trim(),
-      email: document.getElementById('email').value.trim(),
-      message: document.getElementById('message').value.trim(),
-    };
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        responseEl.textContent = data.message || 'Thank you — your message was sent.';
-        responseEl.style.color = 'green';
-        form.reset();
-      } else {
-        responseEl.textContent = data.error || 'Something went wrong. Please try again later.';
-        responseEl.style.color = 'red';
+        if (res.ok) {
+          responseEl.textContent = data.message || "Thank you. Your message has been sent.";
+          responseEl.style.color = "#166534";
+          responseEl.style.background = "#effaf3";
+          responseEl.style.borderColor = "rgba(22, 101, 52, 0.12)";
+          form.reset();
+        } else {
+          responseEl.textContent = data.error || "Something went wrong. Please try again later.";
+          responseEl.style.color = "#b91c1c";
+          responseEl.style.background = "#fef2f2";
+          responseEl.style.borderColor = "rgba(185, 28, 28, 0.12)";
+        }
+      } catch (err) {
+        responseEl.classList.remove("hidden");
+        responseEl.textContent = "Network error. Please try again later.";
+        responseEl.style.color = "#b91c1c";
+        responseEl.style.background = "#fef2f2";
+        responseEl.style.borderColor = "rgba(185, 28, 28, 0.12)";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Inquiry";
       }
-    } catch (err) {
-      responseEl.textContent = 'Network error — please try again later.';
-      responseEl.style.color = 'red';
-    } finally {
-      responseEl.classList.remove('hidden');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send';
-    }
-  });
-</script>
-
+    });
+  </script>
 </body>
 </html>
