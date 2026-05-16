@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -137,6 +137,7 @@
       position: sticky;
       top: 0;
       z-index: 30;
+      -webkit-backdrop-filter: blur(18px);
       backdrop-filter: blur(18px);
       background: rgba(250, 248, 244, 0.88);
       border-bottom: 1px solid rgba(31, 42, 55, 0.08);
@@ -304,6 +305,8 @@
       border-radius: var(--radius-md);
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.14);
+      /* Safari support */
+      -webkit-backdrop-filter: blur(14px);
       backdrop-filter: blur(14px);
     }
 
@@ -536,6 +539,20 @@
       max-width: 60ch;
     }
 
+    .section-stack-lg {
+      margin-top: 32px;
+    }
+
+    .section-stack-md {
+      margin-top: 30px;
+    }
+
+    .cta-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
     .contact-grid {
       grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
       align-items: start;
@@ -690,7 +707,7 @@
       }
 
       .hero-grid {
-        min-height: auto;
+        min-height: 0;
       }
 
       .hero-panel {
@@ -754,7 +771,7 @@
   <nav class="site-nav">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Awesome Accounting Services home">
-        <img src="/logo-awe.jpg" alt="Awesome Accounting Services logo" onerror="this.onerror=null;this.src='public/logo-awe.jpg';" />
+        <img id="brandLogo" src="/logo-awe.jpg" alt="Awesome Accounting Services logo" />
         <div class="brand-copy">
           <strong>Awesome Accounting Services</strong>
           <span>Accounting, compliance, and financial support</span>
@@ -869,7 +886,7 @@
         <p class="lead">
           Our service mix is designed to help companies maintain clean books, meet regulatory responsibilities, and present financial information with clarity and professionalism.
         </p>
-        <div class="services-grid" style="margin-top:32px">
+        <div class="services-grid section-stack-lg">
           <article class="service-card">
             <div class="service-tag">01</div>
             <h3>Accounting and Bookkeeping</h3>
@@ -908,7 +925,7 @@
       <div class="container">
         <span class="section-label">Client Fit</span>
         <h2>Well-suited for practical, growth-oriented organizations.</h2>
-        <div class="industries-grid" style="margin-top:30px">
+        <div class="industries-grid section-stack-md">
           <article class="industry-card">
             <h3>Small and Medium Enterprises</h3>
             <p>For owners who need structure in their records, regular compliance support, and dependable admin coordination.</p>
@@ -929,7 +946,7 @@
       <div class="container">
         <span class="section-label">How We Work</span>
         <h2>A professional engagement flow that builds trust.</h2>
-        <div class="process-grid" style="margin-top:30px">
+        <div class="process-grid section-stack-md">
           <article class="process-step">
             <div class="step-no">1</div>
             <h3>Initial Discovery</h3>
@@ -953,7 +970,7 @@
       <div class="container">
         <div class="cta-band">
           <div>
-            <h3 style="font-size:2rem;margin-bottom:10px;font-family:'Cormorant Garamond',serif;">Present a stronger image to your own clients and stakeholders.</h3>
+            <h3 class="cta-title">Present a stronger image to your own clients and stakeholders.</h3>
             <p>
               This company profile layout is designed to communicate trust, order, and professionalism from the first impression.
             </p>
@@ -967,9 +984,9 @@
       <div class="container contact-grid">
         <article class="contact-panel">
           <span class="section-label">Contact</span>
-          <h2>Let’s discuss your accounting and compliance needs.</h2>
+          <h2>Let's discuss your accounting and compliance needs.</h2>
           <p class="lead">
-            Reach out for inquiries, consultations, or service discussions. We’ll help you identify the right support setup for your business.
+            Reach out for inquiries, consultations, or service discussions. We'll help you identify the right support setup for your business.
           </p>
 
           <ul class="contact-details">
@@ -1012,7 +1029,7 @@
           <iframe
             src="https://www.google.com/maps?q=B-2%20L-10%2C%20Brgy.%20Congressional%20Rd%2C%20Poblacion%20IV%2C%20General%20Mariano%20Alvarez%2C%204117%20Cavite%2C%20Philippines&output=embed"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerpolicy="strict-origin-when-cross-origin"
             title="Awesome Accounting Services location map"
           ></iframe>
         </aside>
@@ -1021,8 +1038,8 @@
   </main>
 
   <div class="floating-links">
-    <a href="https://wa.me/639175037023" target="_blank" rel="noreferrer">WhatsApp</a>
-    <a href="https://m.me/100067488122500" target="_blank" rel="noreferrer">Messenger</a>
+    <a href="https://wa.me/639175037023" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://m.me/100067488122500" target="_blank" rel="noopener noreferrer">Messenger</a>
   </div>
 
   <footer>
@@ -1033,9 +1050,14 @@
   </footer>
 
   <script>
+    const brandLogo = document.getElementById("brandLogo");
     const form = document.getElementById("contactForm");
     const responseEl = document.getElementById("response");
     const submitBtn = document.getElementById("submitBtn");
+
+    brandLogo.addEventListener("error", () => {
+      brandLogo.src = "public/logo-awe.jpg";
+    }, { once: true });
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
