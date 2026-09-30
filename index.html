@@ -305,7 +305,6 @@
       border-radius: var(--radius-md);
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      /* Safari support */
       -webkit-backdrop-filter: blur(14px);
       backdrop-filter: blur(14px);
     }
@@ -1072,9 +1071,12 @@
       };
 
       try {
-        const res = await fetch("/api/contact", {
+        const res = await fetch("https://formspree.io/f/mdekbgjv", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
           body: JSON.stringify(payload),
         });
 
@@ -1082,13 +1084,17 @@
         responseEl.classList.remove("hidden");
 
         if (res.ok) {
-          responseEl.textContent = data.message || "Thank you. Your message has been sent.";
+          responseEl.textContent = "Thank you. Your message has been sent.";
           responseEl.style.color = "#166534";
           responseEl.style.background = "#effaf3";
           responseEl.style.borderColor = "rgba(22, 101, 52, 0.12)";
           form.reset();
         } else {
-          responseEl.textContent = data.error || "Something went wrong. Please try again later.";
+          if (data && data.errors) {
+            responseEl.textContent = data.errors.map(error => error.message).join(", ");
+          } else {
+            responseEl.textContent = "Something went wrong. Please try again later.";
+          }
           responseEl.style.color = "#b91c1c";
           responseEl.style.background = "#fef2f2";
           responseEl.style.borderColor = "rgba(185, 28, 28, 0.12)";
@@ -1107,3 +1113,4 @@
   </script>
 </body>
 </html>
+fonts.googleapis.com
